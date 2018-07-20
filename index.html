@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-lzf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/20/lzf/">vue-cli 3.x的跨域配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/20/lzf/" class="archive-article-date">
+  	<time datetime="2018-07-20T03:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vue-config-js的配置"><a href="#vue-config-js的配置" class="headerlink" title="vue.config.js的配置"></a>vue.config.js的配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    lintOnSave: <span class="literal">false</span>,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        proxy: &#123;</span><br><span class="line">            <span class="string">'/api'</span>: &#123;</span><br><span class="line">                target: <span class="string">'https://api.bilibili.com/'</span>,</span><br><span class="line">                pathRewrite: &#123;</span><br><span class="line">                    <span class="string">'^/api'</span>: <span class="string">'/'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    Referer: <span class="string">'https://api.bilibili.com/'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                changeOrigin: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="api-js"><a href="#api-js" class="headerlink" title="api.js"></a>api.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import axios from <span class="string">'axios'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">getRanking</span></span>() &#123;</span><br><span class="line">    const url = <span class="string">'/api/x/web-interface/ranking?rid=0&amp;day=3&amp;jsonp=jsonp'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> axios.get(url)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="页面输出"><a href="#页面输出" class="headerlink" title="页面输出"></a>页面输出</h3><p><img src="../img/bilibili.jpg" alt="bilibili的返回数据"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/20/lzf/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
